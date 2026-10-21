@@ -1,4 +1,5 @@
 .prog
+main
 *.class
 __pycache__/
 node_modules/
