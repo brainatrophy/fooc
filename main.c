@@ -3,11 +3,11 @@
 
 int main(void)
 {
-	int width, height = 0;
-	scanf("%d", &width);
-	scanf("%d", &height);
+	unsigned long int width, height = 0;
+	scanf("%ld", &width);
+	scanf("%ld", &height);
 
-	printf("%d\n", width * height);
+	printf("%ld\n", width * height);
 	printf("%.2f\n", (float)width / (float)height);
 
 	return 0;
