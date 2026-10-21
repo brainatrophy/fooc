@@ -3,12 +3,12 @@
 
 int main(void)
 {
-	double temp_n1, temp_n2 = 0.0;
-	scanf("%lf", &temp_n1);
-	scanf("%lf", &temp_n2);
+	int width, height = 0;
+	scanf("%d", &width);
+	scanf("%d", &height);
 
-	printf("%f\n", temp_n1 + temp_n2);
-	printf("%d\n", (int)(temp_n1 + temp_n2));
+	printf("%d\n", width * height);
+	printf("%.2f\n", (float)width / (float)height);
 
 	return 0;
 }
