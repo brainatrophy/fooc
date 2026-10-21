@@ -3,16 +3,12 @@
 
 int main(void)
 {
-	/* Already done for you: read one line of text into name and drop the
-	Enter key from its end. If there is no input, name stays empty.
-	The Strings lesson covers reading lines in detail. */
-	char name[256] = "";
-	fgets(name, sizeof name, stdin);
-	name[strcspn(name, "\r\n")] = '\0';
+	double temp_n1, temp_n2 = 0.0;
+	scanf("%lf", &temp_n1);
+	scanf("%lf", &temp_n2);
 
-	/* TODO: print the two lines described in the exercise.
-	Use a %s placeholder for name; do not type any name yourself. */
-	printf("Hello, %s!\nWelcome to C.\n", name);
+	printf("%f\n", temp_n1 + temp_n2);
+	printf("%d\n", (int)(temp_n1 + temp_n2));
 
 	return 0;
 }
