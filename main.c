@@ -1,14 +1,27 @@
 #include <stdio.h>
-#include <string.h>
+
+typedef struct Range {
+	int data[5];
+	int length;
+	int highest;
+} Range;
 
 int main(void)
 {
-	unsigned long int width, height = 0;
-	scanf("%ld", &width);
-	scanf("%ld", &height);
+	Range r = {
+		.data    = {0},
+		.length  = sizeof(r.data) / sizeof(r.data[0]),
+		.highest = 0,
+	};
 
-	printf("%ld\n", width * height);
-	printf("%.2f\n", (float)width / (float)height);
+	for (int i = 0; i < r.length; i++)
+		scanf("%d", &r.data[i]);
+
+	for (int i = 0; i < r.length; i++) {
+		if (r.data[i] > r.highest)
+			r.highest = r.data[i];
+	}
+	printf("%d\n", r.highest);
 
 	return 0;
 }
