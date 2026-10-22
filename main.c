@@ -17,6 +17,7 @@ int main(void)
 	for (int i = 0; i < r.length; i++)
 		scanf("%d", &r.data[i]);
 
+	r.highest = r.data[0];
 	for (int i = 0; i < r.length; i++) {
 		if (r.data[i] > r.highest)
 			r.highest = r.data[i];
