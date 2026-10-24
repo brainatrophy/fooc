@@ -1,28 +1,18 @@
 #include <stdio.h>
-
-typedef struct Range {
-	int data[5];
-	int length;
-	int highest;
-} Range;
+#include <string.h>
 
 int main(void)
 {
-	Range r = {
-		.data    = {0},
-		.length  = sizeof(r.data) / sizeof(r.data[0]),
-		.highest = 0,
-	};
+	char input[16] = {0};
+	fgets(input, sizeof input, stdin);
 
-	for (int i = 0; i < r.length; i++)
-		scanf("%d", &r.data[i]);
-
-	r.highest = r.data[0];
-	for (int i = 0; i < r.length; i++) {
-		if (r.data[i] > r.highest)
-			r.highest = r.data[i];
+	for (size_t i = 0; i < sizeof(input); i++) {
+		if (input[i] == '\n') {
+			input[i] = '\0';
+			break;
+		}
 	}
-	printf("%d\n", r.highest);
+	printf("%d", (int)strlen(input));
 
 	return 0;
 }
