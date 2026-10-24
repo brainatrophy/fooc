@@ -1,18 +1,17 @@
 #include <stdio.h>
-#include <string.h>
 
 int main(void)
 {
-	char input[100] = {0};
-	fgets(input, sizeof input, stdin);
+	int input;
+	scanf("%d", &input);
 
-	for (size_t i = 0; i < sizeof(input); i++) {
-		if (input[i] == '\n') {
-			input[i] = '\0';
-			break;
-		}
-	}
-	printf("%d", (int)strlen(input));
+	int divThree = input % 3 == 0;
+	int divFive  = input % 5 == 0;
+
+	if (divThree && divFive) puts("FizzBuzz");
+	else if (divThree)       puts("Fizz");
+	else if (divFive)        puts("Buzz");
+	else                     printf("%d\n", input);
 
 	return 0;
 }
