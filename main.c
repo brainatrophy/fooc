@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	char input[16] = {0};
+	char input[100] = {0};
 	fgets(input, sizeof input, stdin);
 
 	for (size_t i = 0; i < sizeof(input); i++) {
