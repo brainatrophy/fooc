@@ -1,22 +1,37 @@
 #include <stdio.h>
-
-typedef struct {
-	int x, y;
-} Point;
-
-int dist2(Point a, Point b)
-{
-	int x_sq = (b.x - a.x);
-	int y_sq = (b.y - a.y);
-	return x_sq*x_sq + y_sq*y_sq;
-}
+#include <stdlib.h>
 
 int main(void)
 {
-	Point a, b = {0};
-	scanf("%d\n%d\n%d\n%d", &a.x, &a.y, &b.x, &b.y);
+	int n;
+	scanf("%d", &n);
 
-	printf("%d\n", dist2(a, b));
+	int *values = malloc(n * sizeof(int));
+	if (values == NULL)
+		return 1;
+
+	int v, i = 0;
+	for (; i < n; i++) {
+		scanf("%d", &v);
+		values[i] = v;
+	}
+
+	long int total = 0;
+	i -= 1; // reuse iterator
+	for (; i >= 0; i--) {
+		switch (i) {
+		case 0:
+			printf("%d\n", values[i]);
+			break;
+		default:
+			printf("%d ", values[i]);
+			break;
+		}
+		total += values[i];
+	}
+	printf("%ld\n", total);
+
+	free(values);
 
 	return 0;
 }
