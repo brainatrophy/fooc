@@ -1,15 +1,23 @@
 #include <stdio.h>
 
+int clamp(int value, int lo, int hi) {
+	if      (value < lo) return lo;
+	else if (value > hi) return hi;
+	else                 return value;
+}
+
 int main(void)
 {
-	int input;
-	scanf("%d", &input);
+	int lo, hi = 0;
+	int n = 0;
+	scanf("%d %d\n", &lo, &hi);
+	scanf("%d\n", &n);
 
-	long long int total = 0;
-	for (int i = 1; i <= input; i += 2) {
-		total += i;
+	int current;
+	for (int i = 0; i < n; i++) {
+		scanf("%d", &current);
+		printf("%d\n", clamp(current, lo, hi));
 	}
-	printf("%lld\n", total);
 
 	return 0;
 }
