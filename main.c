@@ -5,13 +5,11 @@ int main(void)
 	int input;
 	scanf("%d", &input);
 
-	int divThree = input % 3 == 0;
-	int divFive  = input % 5 == 0;
-
-	if (divThree && divFive) puts("FizzBuzz");
-	else if (divThree)       puts("Fizz");
-	else if (divFive)        puts("Buzz");
-	else                     printf("%d\n", input);
+	int total = 0;
+	for (int i = 1; i <= input; i += 2) {
+		total += i;
+	}
+	printf("%d\n", total);
 
 	return 0;
 }
