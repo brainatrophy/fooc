@@ -1,23 +1,18 @@
 #include <stdio.h>
 
-int clamp(int value, int lo, int hi) {
-	if      (value < lo) return lo;
-	else if (value > hi) return hi;
-	else                 return value;
+void swap(int *left, int *right)
+{
+	int n = *left;
+	*left = *right;
+	*right = n;
 }
 
 int main(void)
 {
-	int lo, hi = 0;
-	int n = 0;
-	scanf("%d %d\n", &lo, &hi);
-	scanf("%d\n", &n);
-
-	int current;
-	for (int i = 0; i < n; i++) {
-		scanf("%d", &current);
-		printf("%d\n", clamp(current, lo, hi));
-	}
+	int l, r = 0;
+	scanf("%d %d", &l, &r);
+	swap(&l, &r);
+	printf("%d %d\n", l, r);
 
 	return 0;
 }
